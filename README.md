@@ -5,8 +5,12 @@ I learnt **Tkinter** during my [**BlockChain Database**](https://github.com/Mira
 
 Now, during the time spent in giving something back to the community I find beautiful Tkinter based applications on [StackOverflow](https://stackoverflow.com/questions/tagged/tkinter) and I think it would be nice to curate them together so that people especially **beginners** can have a look at these (Also, it wouldn't be nice to just let them slip away into the past :worried:) and hopefully learn something of it.
 
-![Ahem! Ahem!](https://media1.tenor.com/images/c9168e2fcc4852ef08e3683aefe56285/tenor.gif)
+<p align='center'>
+    <img src='https://media1.tenor.com/images/c9168e2fcc4852ef08e3683aefe56285/tenor.gif' alt='Ahem! Ahem!'>
+</p>
 
 >***Kindly note that there is no intention of any kind of `Plagiarism` involved as many of these were either answered by me or its just for this collection.***
 
-![Good Luck](https://media.tenor.com/images/95035dba7014c6e5ee6594e3c05be55a/tenor.gif)
+<p align='center'>
+    <img src='https://media.tenor.com/images/95035dba7014c6e5ee6594e3c05be55a/tenor.gif' alt='Good Luck!'>
+</p>
