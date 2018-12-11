@@ -45,6 +45,7 @@ class DrawApp(tk.Tk):
 
 	def _clear(self):
 		self.canvas.delete("all")
+		self.tag = ["tag", "0"]
 
 	def _undo(self):
 		cur_tag = int(self.tag[1])
