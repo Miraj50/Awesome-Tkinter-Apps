@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
     clock1 = Clock(frame)
     clock1.pack()
-    clock1.configure(bg='white', fg='black', font=("helvetica", 65))
+    clock1.configure(bg='black', fg='white', font=("comic sans MS", 65))
 
     tkinter.Label(frame, text=" ").pack()
 
