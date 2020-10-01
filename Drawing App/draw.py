@@ -8,7 +8,7 @@ class DrawApp(tk.Tk):
 		self._xold = None
 		self._yold = None
 		self.canvas = None
-		self.color = "Black"
+		self.color = "white"
 		self.thickness = 1
 		self.tag = ["tag", "0"] #Don't know why but tags can't be just a number
 		self._create_widgets()
