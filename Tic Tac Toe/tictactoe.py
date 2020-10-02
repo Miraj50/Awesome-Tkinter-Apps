@@ -67,3 +67,127 @@ class TTT(tk.Tk):
 		self.Start()
 
 TTT().mainloop()
+
+
+##########################################################################################
+"""you can also try this"""
+class tictactoe():
+    def newgame(self):
+        self.root.destroy()
+        import tkinter as tk
+        from PIL import ImageTk
+        from tkinter import messagebox
+        from tkinter.ttk import Progressbar
+        self.p1 = 'player1'
+        self.p2 = 'player2'
+        self.stop_game = False
+        self.w = 0
+        self.sX = 0
+        self.sO = 0
+        self.player = 'X'
+        self.root = tk.Tk()
+        self.root.title('TicTacToe game')
+        self.root.resizable(0, 0)
+        self.root.tk.call('wm', 'iconphoto', self.root._w, ImageTk.PhotoImage(file='2.png'))
+        self.b = [[0, 0, 0],
+                  [0, 0, 0],
+                  [0, 0, 0]]
+        self.state = [[0, 0, 0],
+                      [0, 0, 0],
+                      [0, 0, 0]]
+        for i in range(3):
+            for j in range(3):
+                self.b[i][j] = tk.Button(font="Arial 60 bold", width=4, bg='powder blue',
+                                         command=lambda r=i, c=j: self.callback(r, c))
+                self.b[i][j].grid(row=i, column=j)
+        self.button = tk.Button(text="Playagain", font="times 14 bold", command=self.newgame)
+        self.button.grid(row=10, column=1)
+        self.root.mainloop()
+
+
+    def check_for_winner(self):
+        global stop_game
+        from tkinter import messagebox
+        import tkinter as tk
+        for i in range(3):
+            if self.state[i][0] == self.state[i][1] == self.state[i][2] != 0:
+                self.b[i][0].config(bg='yellow')
+                self.b[i][1].config(bg='yellow')
+                self.b[i][2].config(bg='yellow')
+                stop_game = True
+                self.z = self.state[i][0]
+                self.winner = messagebox.showinfo("Winner", f"{self.state[i][0]} Won!")
+                self.newgame()
+
+            elif self.state[0][i] == self.state[1][i] == self.state[2][i] != 0:
+                self.b[0][i].config(bg='yellow')
+                self.b[1][i].config(bg='yellow')
+                self.b[2][i].config(bg='yellow')
+                stop_game = True
+                self.z = self.state[i][0]
+                self.winner = messagebox.showinfo("Winner", f"{self.state[i][0]} Won!")
+                self.newgame()
+
+            elif self.state[0][0] == self.state[1][1] == self.state[2][2] != 0:
+                self.b[0][0].config(bg='yellow')
+                self.b[1][1].config(bg='yellow')
+                self.b[2][2].config(bg='yellow')
+                self.stop_game = True
+                self.z = self.state[i][0]
+                self.winner = messagebox.showinfo("Winner", f"{self.state[i][0]} Won!")
+                self.newgame()
+
+            elif self.state[2][0] == self.state[1][1] == self.state[0][2] != 0:
+                self.b[2][0].config(bg='yellow')
+                self.b[1][1].config(bg='yellow')
+                self.b[0][2].config(bg='yellow')
+                self.stop_game = True
+                self.z = self.state[i][0]
+                self.winner = messagebox.showinfo("Winner", f"{self.state[i][0]} Won!")
+                self.newgame()
+            elif self.state[0][i] and self.state[1][i] and self.state[2][i] == str:
+                self.newgame()
+        return
+
+    def callback(self, r, c):
+        global player
+
+        if self.player == 'X' and self.state[r][c] == 0 and self.stop_game == False:
+            self.b[r][c].configure(text='X', fg='blue', bg='white')
+            self.state[r][c] = 'X'
+            self.player = 'O'
+
+        if self.player == 'O' and self.state[r][c] == 0 and self.stop_game == False:
+            self.b[r][c].configure(text='O', fg='red', bg='white')
+            self.state[r][c] = 'O'
+            self.player = 'X'
+        self.check_for_winner()
+
+    def __init__(self):
+        import tkinter as tk
+        from PIL import ImageTk
+        self.p1 = 'player1'
+        self.p2 = 'player2'
+        self.stop_game = False
+        self.w = 0
+        self.sX = 0
+        self.sO = 0
+        self.player = 'X'
+        self.root = tk.Tk()
+        self.root.title('TicTacToe game')
+        self.root.resizable(0, 0)
+        self.root.tk.call('wm', 'iconphoto', self.root._w, ImageTk.PhotoImage(file='2.png'))
+        self.b = [[0, 0, 0],
+                  [0, 0, 0],
+                  [0, 0, 0]]
+        self.state = [[0, 0, 0],
+                      [0, 0, 0],
+                      [0, 0, 0]]
+        for i in range(3):
+            for j in range(3):
+                self.b[i][j] = tk.Button(font="Arial 60 bold", width=4, bg='powder blue',
+                                         command=lambda r=i, c=j: self.callback(r, c))
+                self.b[i][j].grid(row=i, column=j)
+        self.button = tk.Button(text="Playagain", font="times 14 bold", command=self.newgame)
+        self.button.grid(row=10, column=1)
+        self.root.mainloop()
